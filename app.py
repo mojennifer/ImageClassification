@@ -35,7 +35,6 @@ def prediction(filename):
     my_image = plt.imread(os.path.join('uploads', filename))
     #Step 2
     my_image_re = resize(my_image, (32,32,3))
-    
     #Step 3
     #with graph.as_default():
       #set_session(sess)
@@ -50,8 +49,8 @@ def prediction(filename):
     predictions = {
       "class1":number_to_class[index[0]],
       "class2":number_to_class[index[1]],
-      "prob2":probabilities[index[0]],
-      "prob3":probabilities[index[1]],
+      "prob1":probabilities[index[0]],
+      "prob2":probabilities[index[1]],
      }
     #Step 5
     return render_template('predict.html', predictions=predictions)
