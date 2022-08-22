@@ -47,10 +47,10 @@ def prediction(filename):
     number_to_class = ['apple', 'orange']
     index = np.argsort(probabilities)
     predictions = {
-      "class-most-likely":number_to_class[index[1]],
-      "class-2nd-most-likely":number_to_class[index[0]],
-      "prob-most-likely":probabilities[index[1]],
-      "prob-2nd-most-likely":probabilities[index[0]],
+      "class1":number_to_class[index[1]],
+      "class0":number_to_class[index[0]],
+      "prob1":probabilities[index[1]],
+      "prob0":probabilities[index[0]],
      }
     #Step 5
     return render_template('predict.html', predictions=predictions)
